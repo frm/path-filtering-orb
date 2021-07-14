@@ -7,6 +7,9 @@ import subprocess
 
 output_path = os.environ.get('OUTPUT_PATH')
 head = os.environ.get('CIRCLE_SHA1')
+continuation_key = os.environ.get('CIRCLE_CONTINUATION_KEY')
+print("CONTINUATION KEY")
+print(continuation_key)
 base = subprocess.run(
   ['git', 'merge-base', os.environ.get('BASE_REVISION'), head],
   check=True,
